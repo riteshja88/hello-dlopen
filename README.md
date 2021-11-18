@@ -4,7 +4,7 @@ Build and Run the application that prints the prediction on screen
 make run
 ```
 
-In a different window edit predict.c and recompile predict.so
+In a different window edit predict.c and recompile predict.so while the above applications is still running
 ```
 emacs predict.c # make changes as required
 make obj/predict.so
