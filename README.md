@@ -1,5 +1,5 @@
 # hello-dlopen
-Build and Run the application that prints the prediction on screen
+Build and Run the application that keeps printing/updating the prediction on screen 
 ```
 make run
 ```
