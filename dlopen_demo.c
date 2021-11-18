@@ -50,22 +50,6 @@ void rutime_load_predict_so(int (**func_predict)(int))
 
 	*func_predict = (int(*)(int))dlsym(handle, "func_predict");
 
-	/* According to the ISO C standard, casting between function
-	   pointers and 'void *', as done above, produces undefined results.
-	   POSIX.1-2001 and POSIX.1-2008 accepted this state of affairs and
-	   proposed the following workaround:
-
-	   *(void **) (&cosine) = dlsym(handle, "cos");
-
-	   This (clumsy) cast conforms with the ISO C standard and will
-	   avoid any compiler warnings.
-
-	   The 2013 Technical Corrigendum 1 to POSIX.1-2008 improved matters
-	   by requiring that conforming implementations support casting
-	   'void *' to a function pointer.  Nevertheless, some compilers
-	   (e.g., gcc with the '-pedantic' option) may complain about the
-	   cast used in this program. */
-
 	error = dlerror();
 	if (error != NULL) {
 		fprintf(stderr, "%s\n", error);
